@@ -6,6 +6,7 @@ import CoinDetails from "./Components/CoinDetails";
 import Exchanges from "./Components/Exchanges";
 import Footer from "./Components/Footer";
 
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
           <Route path="/exchanges" element={<Exchanges/>}/>
         </Routes>
         <Footer/>
+        
       </Router>
     </div>
   );
