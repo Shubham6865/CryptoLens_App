@@ -7,17 +7,19 @@ import image1 from '../Assets/5.png';
 const Footer = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % 3);
-  };
-
+  
   useEffect(() => {
+    const handleNextSlide = () => {
+      setCurrentIndex((currentIndex + 1) % 3);
+    };
     const interval = setInterval(() => {
       handleNextSlide();
     }, 10000);
-
+  
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
+  // Include currentIndex in the dependency array
+  
 
   const slides = [
     {
@@ -34,6 +36,7 @@ const Footer = () => {
       heading: "About Us",
       text: "Where code meets currency, innovation knows no bounds.",
       image: image1,
+      footer: "© 2023 — Shubham Parade. All Rights Reserved."
     },
   ];
 
@@ -41,30 +44,20 @@ const Footer = () => {
     <Box bgColor="blackAlpha.900" color="whiteAlpha.700" minH="48" px="16" py={["16", "8"]}>
       <Stack direction={["column", "row"]} h="full" alignItems="center">
         <VStack w="full" alignItems={["center", "flex-start"]} flex={7}>
-          <Carousel infiniteLoop autoPlay showStatus={false} showArrows={true} interval={10000} showThumbs={false} selectedItem={currentIndex}>
+          <Carousel infiniteLoop autoPlay showStatus={false} showControlDots={false} showArrows={true} interval={5000} showThumbs={false} selectedItem={currentIndex}>
             {slides.map((slide, index) => (
               <div key={index}>
                 <Text fontSize="lg" fontWeight="bold">{slide.heading}</Text>
-                <Text pb={1}>{slide.text}</Text>
-                {slide.image && (
-                  <img
-                    style={{
-                      maxWidth: '250px',
-                      height: 'auto',
-                      marginBottom: '1rem',
-                    }}
-                    src={slide.image}
-                    alt={`Slide ${index + 1}`}
-                    filter={"grayscale(1)"}
-                  />
-                )}
+                <Text pb={5}>{slide.text}</Text>
+                {/* Slider */}
               </div>
             ))}
           </Carousel>
         </VStack>
         <VStack flex={3}>
           <Avatar boxSize="28" mt={["4", "0"]} />
-          <Text>Our Founder</Text>
+          <Text mb={0.1}>Our Founder</Text>
+          <Text mt={0.1}>© 2023 — Xcrypto. All Rights Reserved.</Text>
         </VStack>
       </Stack>
     </Box>
