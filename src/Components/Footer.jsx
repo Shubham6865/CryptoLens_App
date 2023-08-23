@@ -54,18 +54,7 @@ const Footer = () => {
   return (
     <Box bgColor="blackAlpha.900" color="whiteAlpha.700" minH="48" px="16" py={["8", "4"]}>
       <Stack direction={["column", "row"]} h="full" alignItems="center">
-        <VStack w="full"  alignItems={["center", "flex-start"]} flex={7}>
-          <Carousel infiniteLoop autoPlay showStatus={false} showControlDots={false} showArrows={true} interval={5000} showThumbs={false} selectedItem={currentIndex}>
-            {slides.map((slide, index) => (
-              <div key={index}>
-                <Text fontSize="lg" fontWeight="bold">{slide.heading}</Text>
-                <Text pb={5}>{slide.text}</Text>
-                {/* Slider */}
-
-              </div>
-            ))}
-          </Carousel>
-        </VStack>
+       
         <VStack flex={3}>
           <Avatar boxSize="28" mt={["4", "0"]} />
           <Text mb={0.1}>Our Founder</Text>
