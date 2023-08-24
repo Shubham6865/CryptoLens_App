@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <Box bgColor={"blackAlpha.900"} w={"full"} h={"85vh"}>
 <motion.div style={{
-  height:"80vh",
+  height:"70vh",
 }}
 animate={
   {
@@ -28,7 +28,7 @@ transition={{
 </motion.div>
 <Text fontSize={"6xl"} textAlign={'center'} fontWeight={"thin"} color={'whiteAlpha.700'}
 mt={"-18"}>
-  Xcrypto
+  Crypto-Lens 
 </Text>
     </Box>
   )
