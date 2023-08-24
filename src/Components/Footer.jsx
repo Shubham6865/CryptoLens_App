@@ -22,7 +22,7 @@ const Footer = () => {
   }, [currentIndex]);
   // Include currentIndex in the dependency array
   
-
+  const currentYear = new Date().getFullYear();
   
 
   return (
@@ -32,7 +32,7 @@ const Footer = () => {
         <VStack flex={3}>
           <Avatar boxSize="28" mt={["4", "0"]} />
           <Text mb={0.1}>Our Founder</Text>
-          <Text mt={0.1} textAlign={'center'}>© 2023 — Xcrypto. All Rights Reserved.</Text>
+          <Text mt={0.1} textAlign={'center'}>© {currentYear} — Crypto-Lens. All Rights Reserved.</Text>
 
           {/* Links */}
           <Box as="footer" mb={1} mt={1} borderTopWidth="1px" borderColor="gray.200">
